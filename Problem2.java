@@ -8,8 +8,7 @@ public class Problem2 {
         private final int HOURS = 24;
         int id;
 
-        public Sensor(int num)
-        {
+        public Sensor(int num) {
             this.id = num;
         }
 
@@ -20,33 +19,25 @@ public class Problem2 {
                 for (int j = 0; j < 60; j++) {
                     int nextReading = r.nextInt(MIN, MAX + 1);
 
-                    if (!max_temps.contains(nextReading))
-                    {
+                    if (!max_temps.contains(nextReading)) {
                         max_temps.offer(nextReading);
 
                         if (max_temps.size() > 5) {
                             max_temps.poll();
                         }
-                    }
-                    else if (max_temps.size() > 5) {
+                    } else if (max_temps.size() > 5) {
                         max_temps.poll();
                     }
 
-                    if (!min_temps.contains(nextReading))
-                    {
+                    if (!min_temps.contains(nextReading)) {
                         min_temps.offer(nextReading);
 
-                        if (min_temps.size() > 5)
-                        {
+                        if (min_temps.size() > 5) {
                             min_temps.poll();
                         }
-                    }
-                    else if (min_temps.size() > 5)
-                    {
+                    } else if (min_temps.size() > 5) {
                         min_temps.poll();
                     }
-                        
-
 
                     list.add(j, nextReading);
                 }
@@ -73,7 +64,7 @@ public class Problem2 {
             }
 
             System.out.println();
-            
+
             list.solve();
             list = new ParallelList_Problem2();
         }

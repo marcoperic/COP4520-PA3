@@ -26,6 +26,7 @@ public class ParallelList_Problem2 {
             lock.unlock();
         }
     }
+
     public Node head;
     public AtomicInteger size;
 
@@ -149,7 +150,7 @@ public class ParallelList_Problem2 {
             curr = curr.next;
             Node temp = curr;
 
-            for (int j = 0; j < 10; j++){
+            for (int j = 0; j < 10; j++) {
                 min_temp = Math.min(min_temp, temp.min);
                 max_temp = Math.max((max_temp), temp.max);
                 temp = temp.next;
